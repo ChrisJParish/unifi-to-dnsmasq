@@ -15,4 +15,5 @@
 # vendor/
 
 output/
-.vscode/*   
+.vscode/*
+dnsmasq-hosts   
