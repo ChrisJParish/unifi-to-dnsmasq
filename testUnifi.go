@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"log"
 	"os"
@@ -11,10 +12,22 @@ import (
 )
 
 func main() {
+
+	user := flag.String("u", "", "User name")
+	pass := flag.String("p", "", "Password")
+	url := flag.String("h", "", "Host Url")
+
+	flag.Parse()
+
+	if *user == "" || *pass == "" || *url == "" {
+		fmt.Println("You haven't passed the required variables")
+		os.Exit(1)
+	}
+
 	c := &unifi.Config{
-		User: "ChrisParish",
-		Pass: "U4Fc2FzgxaN8Uz",
-		URL:  "https://controller.cjparish.uk",
+		User: *user,
+		Pass: *pass,
+		URL:  *url,
 		// Log with log.Printf or make your own interface that accepts (msg, fmt)
 		ErrorLog: log.Printf,
 		DebugLog: log.Printf,
@@ -50,9 +63,9 @@ func main() {
 
 	m1 := regexp.MustCompile(`\s|'|:|,|_|’`)
 
-	os.Remove("dnsdata.conf")
+	//os.Remove("dnsdata.conf")
 
-	fi, err := os.Create("dnsdata.conf")
+	fi, err := os.Create("dnsmasq-hosts")
 	if err != nil {
 		panic(err)
 	}
