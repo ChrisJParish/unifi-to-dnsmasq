@@ -1,4 +1,4 @@
-module unifi/test
+module unifi/unifi-to-dnsmasq
 
 go 1.19
 
