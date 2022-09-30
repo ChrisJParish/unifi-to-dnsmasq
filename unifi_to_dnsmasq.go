@@ -63,7 +63,7 @@ func main() {
 
 	m1 := regexp.MustCompile(`\s|'|:|,|_|’`)
 
-	//os.Remove("dnsdata.conf")
+	os.Remove("dnsmasq-hosts")
 
 	fi, err := os.Create("dnsmasq-hosts")
 	if err != nil {
