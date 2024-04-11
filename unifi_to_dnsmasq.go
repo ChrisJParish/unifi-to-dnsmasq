@@ -8,7 +8,7 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/chrisparish/unifi"
+	"github.com/unpoller/unifi"
 )
 
 func main() {

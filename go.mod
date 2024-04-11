@@ -1,5 +1,12 @@
 module unifi/unifi-to-dnsmasq
 
-go 1.19
+go 1.21
 
-require github.com/chrisparish/unifi v0.0.0-20220924220715-dc67e3433d5c
+toolchain go1.22.2
+
+require github.com/unpoller/unifi v0.4.2
+
+require (
+	github.com/brianvoe/gofakeit/v6 v6.28.0 // indirect
+	golang.org/x/net v0.23.0 // indirect
+)
